@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['sudah_login'] = true;
         
         // Periksa apakah username yang login adalah "donitampan"
-        if ($username === 'donitampan' && $password === '') {
+        if ($username === 'team4' && $password === 'capstone') {
             // Jika username adalah "donitampan", arahkan ke halaman admin.php
             header("Location: admin.php");
             exit(); // Pastikan tidak ada output lain sebelum header
