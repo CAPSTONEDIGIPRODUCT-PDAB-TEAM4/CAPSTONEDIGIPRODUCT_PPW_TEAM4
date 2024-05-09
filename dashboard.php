@@ -418,7 +418,7 @@ $result = $conn->query($query);
                                             <h6><?php echo $row['price']; ?></h6>
                                         </li>
                                     </ul>
-                                    <a href="#login"><i class="fa fa-angle-right"></i></a>
+                                    <a href="https://chat.whatsapp.com/Kkdv3Kkb0GE0nqCGRKnZxt" target="_blank"><i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>

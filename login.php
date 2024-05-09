@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
     </div>
     <!-- ***** Preloader End ***** -->
     
-    <div class="login section" id="login">
+    <div class="contact-us section" id="login">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 align-self-center">
@@ -82,8 +82,8 @@ if (isset($_POST['submit'])) {
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="login-content">
-              <form id="login-form" action="login_process.php" method="post">
+            <div class="contact-us-content">
+              <form id="contact-form" action="login_process.php" method="post">
                 <div class="row">
                   <h2></h2>
                   <div class="col-lg-12">
@@ -92,34 +92,34 @@ if (isset($_POST['submit'])) {
                   <div class="col-lg-12">
                     <input type="password" name="password" id="password" placeholder="Password" required />
                   </div>
-                  <div class="form-check mb-3">
+                  <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="true" name="rememberMe" id="rememberMe">
-                    <label class="form-check-label" for="rememberMe">
-                      Remember Me
-                    </label>
+                    <label class="form-check-label" for="rememberMe">Remember Me</label>
                   </div>
                   <div class="col-lg-12">
-                    <button type="submit" class="orange-button">Login</button>  
+                    <button type="submit" class="orange-button">Login</button>
                   </div>
                   <?php
-                  // Check if there's an error message in the URL
+                // Check if there's an error message in the URL
                   if (isset($_GET['error']) && $_GET['error'] == 1) {
                       echo '<div class="col-lg-12">';
                       echo '<p style="color: white;">Username or password is incorrect.</p>';
                       echo '</div>';
                   }
                   ?>
-                  <div class="col-lg-12">
-                    <a href="index.php"><button>Back to Homepage</button></a>
-                  </div>
-                  
                 </div>
               </form>
+              <div id="contact-form">
+                <div class="col-lg-12">
+                  <a href="index.php"><button>Back to Homepage</button></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
     <footer>
       <div class="container">
         <div class="col-lg-12">

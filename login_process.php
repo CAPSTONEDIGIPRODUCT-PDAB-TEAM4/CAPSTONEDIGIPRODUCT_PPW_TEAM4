@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['sudah_login'] = true;
         
         // Periksa apakah username yang login adalah "donitampan"
-        if ($username === 'donitampan') {
+        if ($username === 'donitampan' && $password === '') {
             // Jika username adalah "donitampan", arahkan ke halaman admin.php
             header("Location: admin.php");
             exit(); // Pastikan tidak ada output lain sebelum header
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Jika tidak ada data yang cocok, kembali ke halaman login dengan pesan kesalahan
-        header("Location: index.php?error=1#login");
+        header("Location: login.php?error=1#login");
         exit(); // Pastikan tidak ada output lain sebelum header
     }
 }
