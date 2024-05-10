@@ -18,6 +18,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     
     // Eksekusi pernyataan
     if ($stmt->execute()) {
+        
         // Jika penghapusan berhasil, arahkan kembali ke halaman sebelumnya atau halaman utama
         header("Location: admin.php"); // Ganti halaman_sebelumnya.php dengan halaman yang sesuai
         exit();

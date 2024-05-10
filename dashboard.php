@@ -10,7 +10,7 @@ if (isset($_COOKIE['ingat_saya'])) {
 // cek session login
 if (!isset($_SESSION['sudah_login'])) {
   header('Location: login.php');
-  exit;
+  exit();
 }
 
 
@@ -395,9 +395,8 @@ $result = $conn->query($query);
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="image">
-                                        <?php echo '<img src="/CAPSTONE/uploads/' . basename($row['image']) . '" alt="Event Image" />'; ?>
+                                      <?php echo '<img src="/CAPSTONE/uploads/' . basename($row['image']) . '" alt="Event Image" />'; ?>
                                     </div>
-
                                 </div>
                                 <div class="col-lg-9">
                                     <ul>
@@ -418,12 +417,21 @@ $result = $conn->query($query);
                                             <h6><?php echo $row['price']; ?></h6>
                                         </li>
                                     </ul>
-                                    <a href="https://chat.whatsapp.com/Kkdv3Kkb0GE0nqCGRKnZxt" target="_blank"><i class="fa fa-angle-right"></i></a>
+                                    <!-- Ubah link WhatsApp agar sesuai dengan data acara dan username pengguna -->
+                                    <?php
+                                    $event_name = urlencode($row['name']);
+                                    $message = "Halo, saya ingin mendaftar event $event_name. Saya adalah pengguna dengan (username_anda).";
+                                    $whatsapp_link = "https://wa.me/62895602790842?text=" . urlencode($message);
+                                    ?>
+                                    <a href="<?php echo $whatsapp_link; ?>" target="_blank">Join <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 <?php endwhile; ?>
+
+
+
             </div>
         </div>
     </div>

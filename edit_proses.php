@@ -46,7 +46,7 @@ if(isset($_GET['id'])) {
             }
 
             // Contoh query pembaruan data event
-            $update_query = "UPDATE events SET name='$name', location='$location', date='$date', start_time='$start_time', price='$price', image='$image' WHERE id=$event_id";
+            $update_query = "UPDATE events SET name='$name', location='$location', date='$date', start_time='$start_time', price='FREE', image='$image' WHERE id=$event_id";
             if(mysqli_query($conn, $update_query)) {
                 // Redirect ke halaman admin setelah pembaruan berhasil
                 header("Location: admin.php");
@@ -100,12 +100,6 @@ if(isset($_GET['id'])) {
             <div class="form-group">
                 <label for="start_time">Start Time</label>
                 <input type="time" id="start_time" name="start_time" value="<?php echo $event['start_time']; ?>" required />
-            </div>
-            <div class="form-group">
-                <label for="price">Price</label>
-                <select id="price" name="price" required>
-                    <option value="FREE" <?php if($event['price'] == 'FREE') echo 'selected'; ?>>FREE</option>
-                </select>    
             </div>
             <div class="form-group">
                 <label for="image">Image</label>

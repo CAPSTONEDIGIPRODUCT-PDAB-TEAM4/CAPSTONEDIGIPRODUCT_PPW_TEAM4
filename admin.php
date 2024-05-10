@@ -101,41 +101,44 @@ $result = $conn->query($query);
                         <h2>Upcoming Events</h2>
                     </div>
                 </div>
-                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-                    <div class="col-lg-12 col-md-6">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="image">
-                                        <?php echo '<img src="/CAPSTONE/uploads/' . basename($row['image']) . '" alt="Event Image" />'; ?>
-                                    </div>
 
-                                </div>
-                                <div class="col-lg-9">
-                                    <ul>
-                                        <li>
-                                            <span class="category"><?php echo $row['location']; ?></span>
-                                            <h4><?php echo $row['name']; ?></h4>
-                                        </li>
-                                        <li>
-                                            <span>Date:</span>
-                                            <h6><?php echo $row['date']; ?></h6>
-                                        </li>
-                                        <li>
-                                            <span>Start:</span>
-                                            <h6><?php echo $row['start_time']; ?></h6>
-                                        </li>
-                                        <li>
-                                            <span>Price:</span>
-                                            <h6><?php echo $row['price']; ?></h6>
-                                        </li>
-                                    </ul>
-                                    <a href="hapus.php?id=<?php echo $row['id']; ?>"><i class="fa fa-trash"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
+                  <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                      <div class="col-lg-12 col-md-6">
+                          <div class="item">
+                              <div class="row">
+                                  <div class="col-lg-3">
+                                      <div class="image">
+                                          <?php echo '<img src="/CAPSTONE/uploads/' . basename($row['image']) . '" alt="Event Image" />'; ?>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-9">
+                                      <ul>
+                                          <li>
+                                              <span class="category"><?php echo $row['location']; ?></span>
+                                              <h4><?php echo $row['name']; ?></h4>
+                                          </li>
+                                          <li>
+                                              <span>Date:</span>
+                                              <h6><?php echo $row['date']; ?></h6>
+                                          </li>
+                                          <li>
+                                              <span>Start:</span>
+                                              <h6><?php echo $row['start_time']; ?></h6>
+                                          </li>
+                                          <li>
+                                              <span>Price:</span>
+                                              <h6><?php echo $row['price']; ?></h6>
+                                          </li>
+                                      </ul>
+                                      <!-- Tambahkan popup konfirmasi di bawah -->
+                                      <a href="hapus.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus?')"><i class="fa fa-trash"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  <?php endwhile; ?>
+
+
             </div>
         </div>
     </div>

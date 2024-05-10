@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             // Data berhasil disimpan
-            $error_message = "Event berhasil ditambahkan!";
+            $success_message = "Event berhasil ditambahkan!";
         } else {
             // Jika terjadi kesalahan saat menyimpan data ke database
             $error_message = "Maaf, terjadi kesalahan saat menyimpan data event: " . $stmt->error;
@@ -70,6 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <header>Tambah Event Baru</header>
         <?php if ($error_message != ""): ?>
             <p style="color: red;"><?php echo $error_message; ?></p>
+        <?php elseif (isset($success_message)): ?>
+            <p style="color: green;"><?php echo $success_message; ?></p>
         <?php endif; ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="event-form">
             <div class="form-group">
@@ -89,11 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="time" id="start_time" name="start_time" required />
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" id="price" name="price" placeholder="FREE" value="FREE" readonly />
-            </div>
-
-            <div class="form-group">
                 <label for="image">Image</label>
                 <input type="file" id="image" name="image" required />
             </div>
@@ -102,6 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p style="text-align: center;"><a href="admin.php">Back To Dashboard</a></p>
         </form>
     </div>
+
+
 </body>
 </html>
           

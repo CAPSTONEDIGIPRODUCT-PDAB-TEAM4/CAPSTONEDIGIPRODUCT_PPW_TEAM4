@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Pastikan form telah disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sisipkan file koneksi

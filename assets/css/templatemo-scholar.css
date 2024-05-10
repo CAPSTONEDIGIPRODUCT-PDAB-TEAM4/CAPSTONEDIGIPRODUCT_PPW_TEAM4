@@ -1514,7 +1514,10 @@ Contact Style
   color: #fff;
   border-radius: 50%;
 }
-
+.contact-us-content h2 {
+  color: white;
+  margin-bottom: 5px;
+}
 .contact-us .contact-us-content {
   border-radius: 25px;
   padding: 80px;
